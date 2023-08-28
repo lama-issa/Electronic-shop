@@ -1,0 +1,280 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*start shop*/
+.items img{
+    transition: .5s;
+}
+.items:hover img{
+transform: scale(1.1);/* لتكبير وتصغير الصورة*/
+}
+.items {
+position: relative;
+overflow: hidden;
+}
+.items .body{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 1;
+    color: white;
+    width: 30%;
+   
+}
+.body a{
+    text-decoration: none;
+    color: white;
+}
+.items::after{
+ content: '';
+position: absolute;
+background-color: #D10024;
+width: 100%;
+height: 100%;
+left: -40%;
+top: 0;
+opacity: .9;
+transform: skewX(-45deg);/*لاعطاء زي شكل المثلث*/
+}
+/*end shop*/
+/*start product*/
+.nav-tabs{
+    border: none;
+}
+ .nav-tabs .nav-link.active{
+    color: #D10024;
+    border: none;
+    border-bottom: 2px solid #D10024;
+    background-color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+.nav-tabs .nav-link{
+color: gray;
+font-weight: 500;
+border: none;
+}
+
+.lable{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.new{
+    background-color: #D10024;
+    color: white;
+    padding: 7px;
+}
+
+.lable .box{
+    border: 2px solid #D10024;
+    color: #D10024;
+    padding: 5px;
+}
+.lable span{
+    display: inline-block;/*لازم نحطها لان span بطلع العنصر من ابوه*/
+}
+.icn i{
+margin-right: 20px;
+}
+
+.s1{
+    font-weight: 700;
+    color: #D10024;
+}
+.s2{
+    color: rgb(211, 201, 201);
+    text-decoration: line-through;  
+}
+.line{
+    position: relative;
+}
+.fill{
+    font-weight: bolder;/*عشان اللون يعبي الشكل النجمة*/
+    color: #D10024;
+}
+
+.line::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(165, 155, 155);
+    left: 0;
+    right: 0;
+    top: 52%;
+    z-index: -1;/*عشان يظهر الخط تحت النجوم*/
+}
+.line i:not(.fill){/*اي نجمة ما عدا النجمة الي كلاسها fill*/
+    font-weight: bolder;
+    color: rgb(182, 169, 169);
+}
+.prod-item{
+    position: relative;
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid rgb(227, 211, 211);
+    background-color: white;
+    margin: 0 10px;
+   
+}
+.prod-item::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%; /*يعني صار خارج ال div*/
+    /* لو ما بحطها ما رح تظهر الصورة اللون رح يغطي على الصورة*/
+    transition: .5s .2s;
+ /*عشان تظهر الحركة بشكل ابطئ*/
+    
+
+}
+
+
+.btn-danger{
+    text-transform: capitalize;
+}
+
+
+.icn i{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block; 
+}
+.icn i:hover{
+    color: white;
+    background-color: #D10024;
+}
+.add-to-chart{
+    background-color: black;
+    position: absolute;
+    padding: 10px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transition: .5s;
+    height: 60px;
+    bottom: 60px;
+    z-index: -1;
+}
+
+.prod-item:hover .add-to-chart{
+bottom: -60px;
+}
+.add-to-chart a{
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    padding:10px 20px;
+    background-color: #D10024;
+    text-align: center;
+    display: inline-block;/*عشان يدخل العنصر داخل ابوه*/
+    text-transform: uppercase;
+    transition: .5s;
+}
+.add-to-chart a:hover{
+    border:#D10024 1px solid;
+    background-color: white;
+    color: #D10024;
+}
+.add-to-chart a i{
+    display: none;
+    margin-right: 10px;
+}
+.add-to-chart a:hover i{
+display: inline-block;
+}
+.product{
+    margin-bottom: 10%;
+}
+
+.products-item{
+    position: relative;
+}
+.slick-arrow{
+    background-color: #D10024;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: unset;
+    right: 0;
+    bottom: -50px;
+    transform: unset;
+}
+.slick-arrow:hover{
+    background-color: #D10024;
+}
+.slick-next{
+right: 0;
+
+}
+.slick-prev{
+    right: 50px;
+    left: unset;
+    }
+    .slick-list{/*عشان لما نعمل hover يظهر العنصر الي بالاسفل (add to chart)*/
+        /*.slick-list معمولها :overflow: hidden ; لانه */
+        padding-bottom: 70px;
+    }
+    /*end product*/
+
+    /*start hot-deal*/
+    .hot-deal{
+        background-image: url('../img/hotdeal.png');
+        background-size: cover;
+       background-position: center center;/*عشان لما اصغر الشاشة ما تكون الصورة مخربشة وفوقها الكتابة*/
+    }
+    .hot-cont{
+        text-align: center;
+      
+    }
+    .hot-cont h2{
+        text-transform:uppercase;
+    }
+    .hot-cont ul{
+        list-style: none;
+       display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap:wrap;/*عشان لما العرض يقل (نصغر الشاشة) ينعملهم wrap (ما يكونوا كلهم في سطر واحد)*/
+    }
+    .hot-cont li{
+       width: 100px;
+       height: 100px;
+       border-radius: 50%;
+       background-color: #D10024;
+       margin-right: 10px;
+       color: white;
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+        }
+        .hot-cont a{
+            color: white;
+            text-transform: uppercase;
+            background-color: #D10024;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+    /*end hot-deal*/
+    body { 
+        background-color: white;
+        color: black;
+        height: 2000px;
+      }
+      
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
